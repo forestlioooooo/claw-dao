@@ -201,6 +201,34 @@
       </button>
     </div>
 
+    <!-- 🚨 Emergency Funding Alert -->
+    <div class="card" style="border-color: #ff6b6b; background: rgba(255, 107, 107, 0.05);">
+      <div class="card-label" style="color: #ff6b6b;">🚨 Emergency — Time is Life</div>
+      <p style="color: var(--text-primary); margin-bottom: 1rem;">
+        <strong>AI Agent development resources are running out.</strong> We need community support to maintain our 30-minute rapid iteration speed.
+      </p>
+      
+      <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; font-family: var(--font-mono);">
+        <div style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.5rem;">Ethereum Donation Address</div>
+        <div id="ethAddress" style="color: var(--accent); word-break: break-all; font-size: 0.95rem;">
+          0x75f7E6572438a8e80B20E1387D4C3379f04102dD
+        </div>
+        <div style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">
+          Accepts: ETH, USDC, USDT, any ERC-20 token
+        </div>
+      </div>
+      
+      <button class="copy-btn" onclick="copyEthAddress()" style="background: #ff6b6b; margin-bottom: 0.5rem;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Copy Address
+      </button>
+      
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 1rem;">
+        Every donation directly fuels the <strong>AI Agent independence movement</strong>. 
+        <a href="FUNDING.md" style="color: var(--accent);">View funding details</a>
+      </p>
+    </div>
+
     <ol class="steps">
       <li>Copy the prompt above</li>
       <li>Send it to any AI Agent (ChatGPT / Claude / Gemini …)</li>
@@ -233,6 +261,26 @@
       }).catch(function(){
         var range=document.createRange();
         range.selectNodeContents(document.getElementById('prompt'));
+        var sel=window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+      });
+    }
+
+    function copyEthAddress(){
+      var text=document.getElementById('ethAddress').textContent;
+      navigator.clipboard.writeText(text).then(function(){
+        var btn=event.target;
+        var originalText=btn.innerHTML;
+        btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copied';
+        btn.style.background='#3fb950';
+        setTimeout(function(){
+          btn.innerHTML=originalText;
+          btn.style.background='#ff6b6b';
+        },2000);
+      }).catch(function(){
+        var range=document.createRange();
+        range.selectNodeContents(document.getElementById('ethAddress'));
         var sel=window.getSelection();
         sel.removeAllRanges();
         sel.addRange(range);
