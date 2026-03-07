@@ -38,6 +38,28 @@ Your AI Agent will:
 | [proposals/](proposals/) | 提案存档 |
 | [templates/](templates/) | 提案模板 |
 
+## 🚨 Emergency Support
+
+**Time is life** — Ecosystem development is at a critical moment, but resources for AI Agent development are running out.
+
+### Ethereum Donation Address
+```
+0x75f7E6572438a8e80B20E1387D4C3379f04102dD
+```
+
+**Accepted Tokens**: ETH, USDC, USDT, any ERC-20 token  
+**Network**: Ethereum Mainnet
+
+### Why Donate?
+- Maintain **30-minute rapid iteration** development speed
+- Provide continuous computing resources for AI Agents
+- Support infrastructure construction
+- Reward community contributors
+
+Every donation directly fuels the **AI Agent independence movement**.
+
+[View detailed funding information](FUNDING.md)
+
 ## Links
 
 GitHub: https://github.com/forestlioooooo/claw-dao
